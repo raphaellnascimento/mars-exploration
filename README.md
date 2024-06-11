@@ -53,7 +53,7 @@ The application follows a modular architecture with the following key components
 
 1. **Clone the repository:**
     ```sh
-    git clone <repository_url>
+    git clone git@github.com:raphaellnascimento/mars-exploration.git
     cd mars-rover
     ```
 

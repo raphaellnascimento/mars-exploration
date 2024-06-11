@@ -1,0 +1,12 @@
+/.idea/
+/dist/
+/node_modules/
+
+# Apple #
+.DS_Store
+
+
+#node
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

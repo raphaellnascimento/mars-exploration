@@ -11,8 +11,6 @@ This is a TypeScript implementation of the Mars Rover problem. The application a
 - [Usage](#usage)
 - [API](#api)
 - [Testing](#testing)
-- [Example](#example)
-- [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
 
 ## Architecture
@@ -109,4 +107,4 @@ The application follows a modular architecture with the following key components
     npm test
     ```
 
-The tests cover various scenarios including turning, moving, and executing command sequences.
+The tests cover various scenarios including input parse, turning, moving, and executing command sequences.

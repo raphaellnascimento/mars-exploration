@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mars Rover</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+    <title>Mars Rover Command Center</title>
+    <!-- Include Bootstrap CSS from CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Mars Rover Input</h1>
+<div class="container">
+    <h1 class="my-4 text-center">Mars Exploration</h1>
+    <div class="form-group">
+        <label for="input">Instructions</label>
+        <textarea id="input" class="form-control" rows="10" placeholder="Enter your commands here..."></textarea>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="sendCommands()">Send Commands to Mars!</button>
+    <h2 class="my-4 text-center">Output</h2>
+    <pre id="output" class="bg-light p-3"></pre>
+</div>
 
-<textarea id="input" rows="10" cols="50" placeholder="Enter your commands here..."></textarea>
-<br>
-<button onclick="sendCommands()">Submit</button>
-
-<h2>Output</h2>
-<pre id="output"></pre>
+<!-- Include Axios from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- Include Bootstrap JS and dependencies from CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ This is a TypeScript implementation of the Mars Rover problem. The application a
 
 ## Table of Contents
 
+- [Business Assumptions](#business-assumptions)
 - [Architecture](#architecture)
 - [Installation](#installation)
 - [Flow of Execution](#flow-of-execution)
@@ -12,6 +13,26 @@ This is a TypeScript implementation of the Mars Rover problem. The application a
 - [API](#api)
 - [Testing](#testing)
 - [Dependencies](#dependencies)
+
+## Business Assumptions
+
+- The plateau is a rectangular grid with dimensions `X` and `Y`.
+- The plateau's coordinates are represented as `(0, 0)` in the bottom-left corner and `(X, Y)` in the top-right corner.
+- The rovers are deployed sequentially and move independently of each other.
+- The rovers' positions are represented by their `X` and `Y` coordinates and their orientation (`N`, `E`, `S`, `W`).
+- The rovers' movements are controlled by a sequence of commands (`L`, `R`, `M`).
+  - `L`: Rotate the rover 90 degrees to the left.
+  - `R`: Rotate the rover 90 degrees to the right.
+  - `M`: Move the rover forward one grid point in the direction it is currently facing.
+- The rovers' movements are validated to ensure they stay within the bounds of the plateau.
+- The rovers' final positions and orientations are displayed after all the commands have been executed.
+- We are not considering the possibility of two rovers colliding with each other.
+
+## Technical Assumptions
+
+- The UX is not a priority, so the application uses a simple HTML form to input the commands.
+- The application is not secure
+- The application doesn't have integration tests, the unit tests are covering the main scenarios.
 
 ## Architecture
 

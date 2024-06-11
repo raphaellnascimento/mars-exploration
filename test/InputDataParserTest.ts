@@ -47,7 +47,7 @@ describe('InputParser', () => {
 
   it('should throw an error if the input is blank', () => {
     const input = '';
-    expect(() => InputParser.parseInput(input)).to.throw('Invalid input data');
+    expect(() => InputParser.parseInput(input)).to.throw('Invalid Instructions data');
   });
 
   it('should throw an error if receive an invalid landing x position', () => {

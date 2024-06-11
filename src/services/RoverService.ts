@@ -47,7 +47,7 @@ export default class RoverService {
       rover.x = newX;
       rover.y = newY;
     } else {
-      throw new InvalidCommandError(`Rover ${rover} is trying to move out of the plateau bounds!`);
+      throw new InvalidCommandError(`Rover at location ${rover} is trying to move out of the plateau bounds!`);
     }
   }
 

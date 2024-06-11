@@ -6,22 +6,25 @@
     <title>Mars Rover Command Center</title>
     <!-- Include Bootstrap CSS from CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootrap-icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-    <h1 class="my-4 text-center">Mars Exploration</h1>
+    <h1 class="my-4 text-center">Mars Exploration <i class="bi bi-rocket"></i></h1>
     <div class="form-group">
-        <label for="input">Instructions</label>
+        <h4><i class="bi bi-file-earmark-text-fill"></i> Instructions</h4>
         <textarea id="input" class="form-control" rows="10" placeholder="Enter your commands here..."></textarea>
     </div>
-    <button class="btn btn-primary btn-block" onclick="sendCommands()">Send Commands to Mars!</button>
-    <h2 class="my-4 text-center">Output</h2>
+    <button class="btn btn-primary btn-block" onclick="sendCommands()">Send instructions to Mars!</button>
+    <h2 class="my-4 text-center">Rover(s) Final Position</h2>
     <pre id="output" class="bg-light p-3"></pre>
 </div>
 
 <!-- Include Axios from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- Include Bootstrap JS and dependencies from CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 </body>

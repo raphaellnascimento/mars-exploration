@@ -69,19 +69,19 @@ describe('RoverService', () => {
     it('should throw error when moving out of plateau bounds', () => {
         rover.direction = Direction.North;
         rover.y = 5;
-        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover [1 5 N] is trying to move out of the plateau bounds!');
+        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover at location [1 5 N] is trying to move out of the plateau bounds!');
 
         rover.direction = Direction.East;
         rover.x = 5;
-        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover [5 5 E] is trying to move out of the plateau bounds!');
+        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover at location [5 5 E] is trying to move out of the plateau bounds!');
 
         rover.direction = Direction.South;
         rover.y = 0;
-        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover [5 0 S] is trying to move out of the plateau bounds!');
+        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover at location [5 0 S] is trying to move out of the plateau bounds!');
 
         rover.direction = Direction.West;
         rover.x = 0;
-        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover [0 0 W] is trying to move out of the plateau bounds!');
+        expect(() => roverService.move(rover)).to.throw(InvalidCommandError, 'Rover at location [0 0 W] is trying to move out of the plateau bounds!');
     });
 
     it('should execute commands correctly', () => {

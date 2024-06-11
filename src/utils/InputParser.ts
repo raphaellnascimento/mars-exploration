@@ -10,7 +10,7 @@ export default class InputParser {
     
     static parseInput(input:string):InputData {
       if (!input) {
-        throw new InvalidInputError('Invalid input data')
+        throw new InvalidInputError('Invalid Instructions data')
       }
       const lines = input.trim().split('\n');
       const plateau = this.getPlateauDimension(lines[0]);

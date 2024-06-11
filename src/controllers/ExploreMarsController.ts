@@ -5,7 +5,7 @@ export const exploreMars:RequestHandler = (req, res, next) => {
     const input:string = req.body;
 
     if (!input) {
-        return res.status(400).send('Input data is required');
+        return res.status(400).send('Instructions data is required');
     }
 
     try {

@@ -98,7 +98,7 @@ The application follows a modular architecture with the following key components
     http://localhost:3000
     ```
 
-3. **Input your rover commands in the text area and click "Send Commands".**
+3. **Input your rover instructions in the text area and click "Send Instructions to Mars!".**
 
 ## API
 

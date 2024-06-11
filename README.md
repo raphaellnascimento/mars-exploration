@@ -4,7 +4,7 @@ This is a TypeScript implementation of the Mars Rover problem. The application a
 
 ## Table of Contents
 
-- [Architecture] (#architecture)
+- [Architecture](#architecture)
 - [Installation](#installation)
 - [Flow of Execution](#flow-of-execution)
 - [Dependencies](#dependencies)

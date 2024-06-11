@@ -10,7 +10,7 @@ export default class MarsRoverService {
   rovers: Rover[];
   commands: Map<Rover, Command[]>;
 
-  constructor(input:String) {
+  constructor(input:string) {
     const inputData: InputData = InputParser.parseInput(input);
     this.plateau = inputData.plateau;
     this.rovers = inputData.rovers;

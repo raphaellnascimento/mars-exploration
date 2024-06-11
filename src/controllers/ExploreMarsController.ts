@@ -11,7 +11,6 @@ export const exploreMars:RequestHandler = (req, res, next) => {
     try {
         const service = new MarsRoverService(input);
         res.status(200).json(service.exploreMars());
-
     } catch (error) {
         res.status(500).json(error.message);
     }

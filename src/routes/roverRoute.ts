@@ -1,5 +1,5 @@
 import express from 'express';
-import {exploreMars} from "../controllers/exploreMarsController";
+import {exploreMars} from "../controllers/ExploreMarsController";
 
 const router = express.Router();
 

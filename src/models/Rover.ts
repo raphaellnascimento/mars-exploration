@@ -1,9 +1,11 @@
+import {Direction} from "./Direction";
+
 class Rover {
   x: number;
   y: number;
-  direction: string;
+  direction: Direction;
 
-  constructor(x:number, y:number, direction:string) {
+  constructor(x:number, y:number, direction:Direction) {
     this.x = x;
     this.y = y;
     this.direction = direction;

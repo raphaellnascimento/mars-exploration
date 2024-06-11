@@ -1,18 +1,21 @@
 import InputParser from "../src/utils/InputParser";
 import {assert, expect} from "chai";
+import {Direction} from "../src/models/Direction";
+import {Command} from "../src/models/Command";
+import {deepEqual} from "assert";
 
 
 describe('InputParser', () => {
   it('should correctly parse the plateau dimensions and rover data', () => {
     const input = `5 5
       1 2 N
-      LMLMLMLMM
+      LMLR
       3 3 E
-      MRRMMRMRRM
+      MRRRL
     `;
     const roverData = [
-      { x: 1, y: 2, direction: 'N', commands: 'LMLMLMLMM' },
-      { x: 3, y: 3, direction: 'E', commands: 'MRRMMRMRRM' }
+      { x: 1, y: 2, direction: Direction.North, commands: [Command.Left, Command.Move, Command.Left, Command.Right]},
+      { x: 3, y: 3, direction: Direction.East, commands: [Command.Move, Command.Right, Command.Right, Command.Right, Command.Left] }
     ]
 
     const result = InputParser.parseInput(input);
@@ -24,7 +27,7 @@ describe('InputParser', () => {
         assert(roverData[i].x === result.rovers[i].x);
         assert(roverData[i].y === result.rovers[i].y);
         assert(roverData[i].direction === result.rovers[i].direction);
-        assert(roverData[i].commands === result.commands.get(result.rovers[i]));
+        deepEqual(roverData[i].commands, result.commands.get(result.rovers[i]));
     }
   });
 

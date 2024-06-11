@@ -3,11 +3,12 @@ import Rover from "../models/Rover";
 import InputData from "../models/InputData";
 import InputParser from "../utils/InputParser";
 import RoverService from "./RoverService";
+import {Command} from "../models/Command";
 
 export default class MarsRoverService {
   plateau: Plateau;
   rovers: Rover[];
-  commands: Map<Rover, string>;
+  commands: Map<Rover, Command[]>;
 
   constructor(input:String) {
     const inputData: InputData = InputParser.parseInput(input);

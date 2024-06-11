@@ -3,6 +3,8 @@ import Plateau from "../models/Plateau";
 import Rover from "../models/Rover";
 import InvalidInputError from "../exceptions/InvalidInputError";
 import InvalidCommandError from "../exceptions/InvalidCommandError";
+import {Direction, toDirection} from "../models/Direction";
+import {Command, toCommand} from "../models/Command";
 
 export default class InputParser {
     
@@ -13,7 +15,7 @@ export default class InputParser {
       const lines = input.trim().split('\n');
       const plateau = this.getPlateauDimension(lines[0]);
       const rovers:Rover[]= [];
-      const commands:Map<Rover, string> = new Map<Rover, string>();
+      const commands:Map<Rover, Command[]> = new Map<Rover, Command[]>();
 
       for (let i = 1; i < lines.length; i += 2) {
         const rover = this.getRover(lines[i]);
@@ -52,7 +54,7 @@ export default class InputParser {
       const landingPosition:string[]  = input.trim().split(' ');
       const x:number = Number(landingPosition[0]);
       const y:number = Number(landingPosition[1]);
-      const direction:string = landingPosition[2];
+      const strDirection:string = landingPosition[2];
 
 
       if (!Number.isInteger(x) || x < 0) {
@@ -63,27 +65,27 @@ export default class InputParser {
         throw new InvalidInputError('Landing y must be a valid and positive number')
       }
 
-      const directions:string[] = ['N', 'E', 'S', 'W'];
-
-      if (!directions.includes(direction)) {
-        throw new InvalidInputError(`Invalid landing direction: ${direction}`)
+      const direction:Direction | undefined = toDirection(strDirection);
+      if (!direction) {
+        throw new InvalidInputError(`Invalid landing direction: ${strDirection}`)
       }
+
       return new Rover(x, y, direction);
     }
 
-    static getCommands(rover:Rover, input:string):string {
+    static getCommands(rover:Rover, input:string):Command[] {
       if(!input) {
         throw new InvalidCommandError(`Rover ${rover} should receive a command string`)
       }
 
-      const validLetters:Set<string> = new Set(['L', 'R', 'M']);
-      const commands:string = input.trim()
-      for (const command of commands) {
-        if (!validLetters.has(command)) {
-          throw new InvalidCommandError(`Invalid command: ${command} for rover ${rover}`)
+      const commands:Command[] = [];
+      for (const strCommand of input.trim()) {
+        const command = toCommand(strCommand);
+        if (!command) {
+          throw new InvalidCommandError(`Invalid command: ${strCommand} for rover ${rover}`)
         }
+        commands.push(command);
       }
-
       return commands;
     }
   }

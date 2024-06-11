@@ -2,14 +2,16 @@ import PlateauService from '../services/PlateauService';
 import Rover from '../models/Rover';
 import Plateau from '../models/Plateau';
 import InvalidCommandError from '../exceptions/InvalidCommandError';
+import {Direction} from "../models/Direction";
+import {Command} from "../models/Command";
 
 export default class RoverService {    
   plateau: Plateau;
-  directions: string[];
+  directions: Direction[];
 
   constructor(plateau: Plateau) {
     this.plateau = plateau;
-    this.directions = ['N', 'E', 'S', 'W'];
+    this.directions = [Direction.North, Direction.East, Direction.South, Direction.West];
   }
 
   turnLeft(rover:Rover):void {
@@ -27,16 +29,16 @@ export default class RoverService {
     let newY:number = rover.y;
     
     switch (rover.direction) {
-      case 'N':
+      case Direction.North:
         newY += 1;
         break;
-      case 'E':
+      case Direction.East:
         newX += 1;
         break;
-      case 'S':
+      case Direction.South:
         newY -= 1;
         break;
-      case 'W':
+      case Direction.West:
         newX -= 1;
         break;
     }
@@ -49,16 +51,16 @@ export default class RoverService {
     }
   }
 
-  executeCommands(rover:Rover, commands: string):void {
+  executeCommands(rover:Rover, commands: Command[]):void {
     for (const command of commands) {
       switch (command) {
-        case 'L':
+        case Command.Left:
           this.turnLeft(rover);
           break;
-        case 'R':
+        case Command.Right:
           this.turnRight(rover);
           break;
-        case 'M':
+        case  Command.Move:
           this.move(rover);
           break;        
       }

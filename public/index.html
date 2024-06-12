@@ -13,12 +13,37 @@
 <div class="container">
     <h1 class="my-4 text-center">Mars Exploration <i class="bi bi-rocket"></i></h1>
     <div class="form-group">
-        <h4><i class="bi bi-file-earmark-text-fill"></i> Instructions</h4>
+        <div class="row">
+            <div class="col-md-6"><h4><i class="bi bi-file-earmark-text-fill"></i> Instructions</h4></div>
+            <div class="col-md-6 text-right">
+                <span role="button">
+                    <i class="bi bi-question-circle-fill" data-toggle="modal" data-target="#helpModal"></i>
+                </span>
+            </div>
+
+        </div>
         <textarea id="input" class="form-control" rows="10" placeholder="Enter your commands here..."></textarea>
     </div>
     <button class="btn btn-primary btn-block" onclick="sendCommands()">Send instructions to Mars!</button>
     <h2 class="my-4 text-center">Rover(s) Final Position</h2>
     <pre id="output" class="bg-light p-3"></pre>
+</div>
+
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p><strong>Example of Input:</strong></p>
+                <span>
+                    5 5</br>
+                    1 2 N</br>
+                    LMLMLMLMM</br>
+                    3 3 E</br>
+                    MRRMMRMRRM</br>
+                </span>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Include Axios from CDN -->

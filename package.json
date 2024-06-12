@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "build": "tsc",
-        "start": "npx tsx src/server.ts",
+        "start": "tsc && npx tsx dist/server.js",
         "test": "mocha --require ts-node/register 'test/*.ts'"
     },
     "dependencies": {

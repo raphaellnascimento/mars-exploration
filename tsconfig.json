@@ -8,8 +8,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "useUnknownInCatchVariables": false,
+    "rootDirs": ["src"],
+    "useUnknownInCatchVariables": false
   },
-  "include": ["src/**/*.ts", "test/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }

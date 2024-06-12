@@ -63,10 +63,11 @@ The application follows a modular architecture with the following key components
 - **TypeScript:** A strongly typed programming language that builds on JavaScript.
 - **Express:** A web application framework for Node.js.
 - **Body-Parser:** A Node.js body parsing middleware.
-- **Axios:** A promise-based HTTP client for the browser and Node.js.
+- **Axios:** A HTTP client for the browser and Node.js.
 - **Mocha:** A JavaScript test framework for Node.js programs.
 - **Chai:** A BDD / TDD assertion library for Node.js.
 - **Ts-Node:** TypeScript execution environment and REPL for Node.js.
+- **Lint:** A tool for identifying and reporting on patterns found in javaScript code.
 
 ## Installation
 

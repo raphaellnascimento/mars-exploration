@@ -102,12 +102,12 @@ The application follows a modular architecture with the following key components
 
 ## API
 
-### POST /api/rovers/execute
+### POST /api/voyager/exploreMars
 
 #### Request
 - **Body:**
-    ```text
-     "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMRRMMRMRRM"    
+    ```sh
+     curl -H "Content-Type:text/plain"  -X POST -d $'5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMRRMMRMRRM' http://localhost:3000/api/voyager/exploreMars    
     ```
 
 #### Response
